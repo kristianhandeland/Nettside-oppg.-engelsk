@@ -1,43 +1,56 @@
 .bondibilde1 {
-    width: 600px;   /* ferdig valgt bredde */
-    height: auto;   /* beholder proporsjonene */
+    width: 100%;      
+    max-width: 600px;  
+    height: auto;   
 }
 .bondibilde2 {
-    width: 600px;
+    width: 100%;      
+    max-width: 600px;
     height: auto;
 }
 .img1 {
-    width: 600px;
+    width: 100%;      
+    max-width: 600px;
     height: auto;
 }
 .img2 {
-    width: 600px;
+    width: 100%;      
+    max-width: 600px;
     height: auto;
 }
 .img3 {
-    width: 600px;
+    width: 100%;      
+    max-width: 600px;
     height: auto;
 }
-/* Generell sideoppsett */
+
 body {
     font-family: Arial, sans-serif;
-    max-width: 900px;      /* Begrenset bredde for bedre lesbarhet */
-    margin: 0 auto;        /* Sentrerer innholdet */
+    margin: 0 auto;        
     padding: 20px;
     line-height: 1.6;
-    background-color: #f9f9f9; /* Lys bakgrunn */
-    color: #333;
+    background-color: #1a1a1a; 
+    color: #f0f0f0;;
+    width: 100vw;
+    overflow-x: hidden; 
+    
+    box-sizing: border-box;  
+    overflow-x: hidden;      
+    
 }
 
-/* Header */
+
 header {
     text-align: center;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    
 }
 
 header h1 a {
     text-decoration: none;
-    color: #333;
+    color: #f0f0f0;
     font-size: 2.5em;
     font-weight: bold;
     transition: color 0.3s;
@@ -47,7 +60,10 @@ header h1 a:hover {
     color: #0077cc;
 }
 
-/* Bilder */
+p{font-weight: 700;
+    font-size: x-large;
+    }
+
 img {
     display: block;
     max-width: 100%;
@@ -56,10 +72,10 @@ img {
     border-radius: 8px;
 }
 
-/* Lenker i h2 */
+
 h2 a {
     text-decoration: none;
-    color: #333;
+    color: #f0f0f0;
     font-size: 1.5em;
     display: block;
     text-align: center;
@@ -71,7 +87,7 @@ h2 a:hover {
     color: #0077cc;
 }
 
-/* Enkel grid for gallerisider */
+
 .bilde-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -86,10 +102,58 @@ h2 a:hover {
     display: block;
 }
 
-/* Footer eller ekstra spacing (valgfritt) */
+
 footer {
     text-align: center;
     margin: 40px 0 20px 0;
     font-size: 0.9em;
     color: #666;
+}
+
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bilder/401E52B9-AE7B-497D-A846-F5B68D0C75CA.jpeg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
+    min-height: 100vh;
+}
+
+header { grid-column: 1 / 3; }
+nav { grid-column: 1; }
+main { grid-column: 2; }
+footer { grid-column: 1 / 3; }
+
+nav h2 { margin: 0; }
+nav h2 + h2 { margin-top: 10px; }
+
+header, nav, main, footer {
+    background-color: rgba(44, 44, 44, 0.3);
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+    gap: 20px;
+}
+
+@media (max-width: 820px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
 }

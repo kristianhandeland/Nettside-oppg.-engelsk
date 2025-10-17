@@ -117,7 +117,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('bilder/401E52B9-AE7B-497D-A846-F5B68D0C75CA.jpeg') no-repeat center center;
+    background: url(bilder/background.jpeg) no-repeat center center;
     background-size: cover;
     opacity: 0.3;
     z-index: -1; 
